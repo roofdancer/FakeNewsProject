@@ -1,0 +1,2 @@
+Start Time,Duration,Run ID,Name,Source Type,Source Name,User,Status,n_estimators,accuracy
+2023-11-11 19:07:11,5.6min,89baf046fff242218723bd91c449bd0c,abrasive-moth-649,LOCAL,/usr/local/lib/python3.10/dist-packages/colab_kernel_launcher.py,antonegorov71@gmail.com,FINISHED,100,0.7053870066501396
