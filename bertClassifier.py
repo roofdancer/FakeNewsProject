@@ -11,7 +11,10 @@ max_length = 150
 class BertClassifier:
     def __init__(self):
         self.tokenizer = AutoTokenizer.from_pretrained(model_path)
-        self.model = BertForSequenceClassification.from_pretrained(model_path)
+        loaded_model = BertForSequenceClassification.from_pretrained(model_path)
+        self.model = torch.quantization.quantize_dynamic(
+            loaded_model, {torch.nn.Linear}, dtype=torch.qint8
+        )
         self.model.eval()
         self.labelEncoder = LabelEncoder()
         self.labelEncoder.classes_ = np.load(model_path + 'classes.npy', allow_pickle=True)
