@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM python:3.7
 
 ENV ROOT_PATH="/opt/my_service"
 
